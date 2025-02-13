@@ -1,10 +1,9 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-import pickle
+import tensorflow as tf
 
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
+model = tf.keras.models.load_model("model.h5")
 
 st.title("Handwritten Digit Recognition")
 st.write("Upload a digit image, and the model will predict the number.")
